@@ -55,8 +55,11 @@ const ProductScreen = ({ history, match }) => {
 
 	return (
 		<>
-			<Meta title={product.name} />
-			<Link to='/' className='btn btn-outline-dark my-3'>
+			<Meta title={product && product.name} />
+			<Link
+				to='/'
+				className='btn btn-outline-dark my-3'
+			>
 				Go Back
 			</Link>
 			{loading ? (
@@ -67,7 +70,12 @@ const ProductScreen = ({ history, match }) => {
 				<>
 					<Row>
 						<Col md={6}>
-							<Image fluid src={product.image} alt={product.name}></Image>
+							<Image
+								fluid
+								src={product.image}
+								className=' img-fluid'
+								alt={product.name}
+							></Image>
 						</Col>
 						<Col md={3}>
 							<ListGroup variant='flush'>
@@ -80,7 +88,7 @@ const ProductScreen = ({ history, match }) => {
 										text={`${product.numReviews} reviews`}
 									/>
 								</ListGroup.Item>
-								<ListGroup.Item>Price : ${product.price}</ListGroup.Item>
+								<ListGroup.Item>Price : ₹{product.price}</ListGroup.Item>
 								<ListGroup.Item>
 									Description : {product.description}
 								</ListGroup.Item>
@@ -122,7 +130,10 @@ const ProductScreen = ({ history, match }) => {
 													>
 														{[...Array(product.countInStock).keys()].map(
 															(x) => (
-																<option key={x + 1} value={x + 1}>
+																<option
+																	key={x + 1}
+																	value={x + 1}
+																>
 																	{x + 1}
 																</option>
 															)
@@ -150,7 +161,10 @@ const ProductScreen = ({ history, match }) => {
 					</Row>
 
 					<Row>
-						<Col md={6} className='pt-3'>
+						<Col
+							md={6}
+							className='pt-3'
+						>
 							<h2>Reviews</h2>
 							{product.reviews.length === 0 && <Message>No Reviews</Message>}
 							<ListGroup variant='flush'>
@@ -194,7 +208,10 @@ const ProductScreen = ({ history, match }) => {
 													onChange={(e) => setComment(e.target.value)}
 												></Form.Control>
 											</Form.Group>
-											<Button type='submit' variant='primary'>
+											<Button
+												type='submit'
+												variant='primary'
+											>
 												Submit
 											</Button>
 										</Form>
