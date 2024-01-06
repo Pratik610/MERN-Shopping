@@ -17,23 +17,62 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import SupportScreen from './screens/SupportScreen'
 function App() {
 	return (
 		<Router>
 			<Header />
 			<main className='py-3'>
 				<Container>
-					<Route path='/orders/:id' component={OrderScreen} />
-					<Route path='/payment' component={PaymentScreen} />
-					<Route path='/placeorder' component={PlaceOrderScreen} />
-					<Route path='/shipping' component={ShippingScreen} />
-					<Route path='/login' component={LoginScreen} />
-					<Route path='/register' component={RegisterScreen} />
-					<Route path='/profile' component={ProfileScreen} />
-					<Route path='/product/:id' component={ProductScreen} />
-					<Route path='/cart/:id?' component={CartScreen} />
-					<Route path='/admin/userlist' component={UserListScreen} />
-					<Route path='/admin/user/:id/edit' component={UserEditScreen} />
+					<Route
+						path='/orders/:id'
+						component={OrderScreen}
+					/>
+					<Route
+						path='/payment'
+						component={PaymentScreen}
+					/>
+					<Route
+						path='/support'
+						component={SupportScreen}
+					/>
+
+					<Route
+						path='/placeorder'
+						component={PlaceOrderScreen}
+					/>
+					<Route
+						path='/shipping'
+						component={ShippingScreen}
+					/>
+					<Route
+						path='/login'
+						component={LoginScreen}
+					/>
+					<Route
+						path='/register'
+						component={RegisterScreen}
+					/>
+					<Route
+						path='/profile'
+						component={ProfileScreen}
+					/>
+					<Route
+						path='/product/:id'
+						component={ProductScreen}
+					/>
+					<Route
+						path='/cart/:id?'
+						component={CartScreen}
+					/>
+					<Route
+						path='/admin/userlist'
+						component={UserListScreen}
+					/>
+					<Route
+						path='/admin/user/:id/edit'
+						component={UserEditScreen}
+					/>
 					<Route
 						path='/admin/productlist'
 						component={ProductListScreen}
@@ -44,11 +83,28 @@ function App() {
 						exact
 						component={ProductListScreen}
 					/>
-					<Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-					<Route path='/admin/orderlist' component={OrderListScreen} />
-					<Route path='/' exact component={HomeScreen} />
-					<Route path='/search/:keyword' component={HomeScreen} exact />
-					<Route path='/page/:pageNumber' component={HomeScreen} />
+					<Route
+						path='/admin/product/:id/edit'
+						component={ProductEditScreen}
+					/>
+					<Route
+						path='/admin/orderlist'
+						component={OrderListScreen}
+					/>
+					<Route
+						path='/'
+						exact
+						component={HomeScreen}
+					/>
+					<Route
+						path='/search/:keyword'
+						component={HomeScreen}
+						exact
+					/>
+					<Route
+						path='/page/:pageNumber'
+						component={HomeScreen}
+					/>
 					<Route
 						path='/search/:keyword/page/:pageNumber'
 						component={HomeScreen}

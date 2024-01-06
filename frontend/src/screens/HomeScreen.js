@@ -27,7 +27,10 @@ const Homescreen = ({ match }) => {
 			{!keyword ? (
 				<ProductCarousel />
 			) : (
-				<Link to='/' className='btn btn-dark m-2'>
+				<Link
+					to='/'
+					className='btn btn-dark m-2'
+				>
 					Go back
 				</Link>
 			)}
@@ -40,7 +43,13 @@ const Homescreen = ({ match }) => {
 				<>
 					<Row>
 						{products.map((product) => (
-							<Col key={product._id} sm={12} md={6} lg={3} xl={3}>
+							<Col
+								key={product._id}
+								sm={12}
+								md={6}
+								lg={3}
+								xl={3}
+							>
 								<Product product={product} />
 							</Col>
 						))}
